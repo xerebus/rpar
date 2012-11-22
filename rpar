@@ -1,3 +1,24 @@
 #!/bin/bash
 
-# rpar bash script
+# This bash script controls what is sent to the Arduino.
+# Edit the settings in the following section as needed.
+
+### SETTINGS ###
+
+# The serial port to which the Arduino is connected.
+PORT=/dev/ttyACM0
+
+# Rename the first input as signal
+SIGNAL=$1
+
+### PROGRAM ###
+
+case "$SIGNAL" in
+up)	echo "* Setting up serial connect on $PORT"
+	stty -F $PORT cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
+	echo "check" > $PORT
+	;;
+*)	echo "* Sending signal $SIGNAL to $PORT"
+	echo $SIGNAL > $PORT
+	;;
+esac
