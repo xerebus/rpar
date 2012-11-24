@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This bash script enables control of the robot with WASD.
+
+echo "Ready for input, type q to exit."
+
+INPUT=0
+
+while [ "$INPUT" != "q" ]; do
+	read -n 1 INPUT
+	# case switch to bind WASD to rpar commands
+	echo ""
+done
