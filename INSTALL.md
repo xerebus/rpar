@@ -14,6 +14,6 @@ Installation Instructions
 
 5. Connect the Arduino to another computer.
 
-6. Using your method of choice, upload the rpar-receiver project to the Arduino.
+6. Using your method of choice, upload the rparrcv project to the Arduino.
 
 7. Remember that before it will work, you have to issue "rpar up". For all other commands, just look at the rpar bash script.
