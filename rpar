@@ -14,11 +14,13 @@ SIGNAL=$1
 ### PROGRAM ###
 
 case "$SIGNAL" in
-up)	echo "* Setting up serial connect on $PORT"
-	stty -F $PORT cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
-	echo "check" > $PORT
-	;;
-*)	echo "* Sending signal $SIGNAL to $PORT"
-	echo $SIGNAL > $PORT
-	;;
+up)		echo "* Setting up serial connect on $PORT"
+		stty -F $PORT cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
+		echo "check" > $PORT
+		;;
+f|b|l|r)	echo "* Sending signal $SIGNAL to $PORT"
+		echo $SIGNAL > $PORT
+		;;
+*)		echo "** Bad input! Read the README file for help."
+		;;
 esac
