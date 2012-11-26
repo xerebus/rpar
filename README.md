@@ -17,10 +17,10 @@ Setup and Movement
 `rpar <cmd>` accepts the following values for <cmd>:
 
 `up` - prepare the serial port
-`fwd`
-`back`
-`left`
-`right`
+`f` - step forward
+`b` - step backward
+`l` - step left
+`r` - step right
 
 WASD Control
 -----------
