@@ -14,12 +14,16 @@ Structure
 Setup and Movement
 -----------------
 
-`rpar <cmd>` accepts the following values for <cmd>:
+`rpar <cmd>` accepts the following values for `<cmd>`:
 
 `up` - prepare the serial port
+
 `f` - step forward
+
 `b` - step backward
+
 `l` - step left
+
 `r` - step right
 
 WASD Control
