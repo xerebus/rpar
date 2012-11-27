@@ -9,7 +9,7 @@ Usage
 Structure
 ---------
 
-`rpar` is the bash script that's mean to be run on the Raspberry Pi (or other mobile computer) to send a particular signal to the Arduino. It also prepares tty settings on the RPi for proper communication through the serial port at 9600 baud. The Arduino project, rpar-receiver, is a program that runs constantly on the Arduino and executes certain actions (like movement) based on serial input.
+`rpar` is the bash script that's mean to be run on the Raspberry Pi (or other mobile computer) to send a particular signal to the Arduino. It also prepares tty settings on the RPi for proper communication through the serial port at 9600 baud. The Arduino project, rparrcv, is a program that runs constantly on the Arduino and executes certain actions (like movement) based on serial input.
 
 Setup and Movement
 -----------------
