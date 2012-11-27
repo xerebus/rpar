@@ -1,14 +1,15 @@
 /* This Arduino sketch receives signals from the serial port
  * and coordinates movement accordingly.
  */
- 
-// Ports to which the servos are connected
-int lw = 5;
-int rw = 6;
 
-void servoStep(int port, int dir) {
+void wheelStep(char wheel, int dir) {
     
-    long unsigned middle = 1500;
+    long unsigned middle;
+    
+    // wheel settings
+    if ( wheel == 'l' ) { middle = 1320; int port = 5; }
+    else if ( wheel == 'r' ) { middle = 1340; int port = 6; }
+    
     long unsigned pulseWidth;
     
     // convert user direction input into pulse width
@@ -55,18 +56,18 @@ void loop() {
 		// what to do based on input
 		
 		if ( input == 'f' ) {
-			servoStep(lw,1);
-			servoStep(rw,-1);
+			wheelStep(lw,1);
+			wheelStep(rw,-1);
 		}
 		else if ( input == 'b' ) {
-			servoStep(lw,-1);
-			servoStep(rw,1);
+			wheelStep(lw,-1);
+			wheelStep(rw,1);
 		}
 		else if ( input == 'l' ) {
-			servoStep(lw,1);
+			wheelStep(rw,-1);
 		}
 		else if ( input == 'r' ) {
-			servoStep(rw,1);
+			wheelStep(lw,-1);
 		}
 		else {
 			Serial.println("Bad input");
