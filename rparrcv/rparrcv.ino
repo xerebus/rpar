@@ -7,32 +7,34 @@ int lw = 5;
 int rw = 6;
 long unsigned lw_middle = 1320;
 long unsigned rw_middle = 1380;
+long unsigned lw_pw_delta = 200;
+long unsigned rw_pw_delta = 180;
 
 void wheelStep(char wheel, int dir) {
     
     long unsigned middle;
     int port;
+    long unsigned pulseWidth;
     
     /** EDIT THESE **/
     // wheel settings
     if ( wheel == 'l' ) {
 		middle = lw_middle;
 		port = lw;
+		if ( dir == 1 ) { pulseWidth = middle + lw_pw_delta; }
+		else if ( dir == 0 ) { pulseWidth = middle; }
+		else if ( dir == -1 ) { pulseWidth = middle - lw_pw_delta; }
 	}
 	else if ( wheel == 'r' ) {
 		middle = rw_middle;
 		port = rw;
+		if ( dir == 1 ) { pulseWidth = middle + rw_pw_delta; }
+		else if ( dir == 0 ) { pulseWidth = middle; }
+		else if ( dir == -1 ) { pulseWidth = middle - rw_pw_delta; }
 	}
 	else {
 		Serial.println("Bad wheel input");
 	}
-    
-    long unsigned pulseWidth;
-    
-    // convert user direction input into pulse width
-    if ( dir == 1 ) { pulseWidth = middle + 200; }
-    else if ( dir == 0 ) { pulseWidth = middle; }
-    else if ( dir == -1 ) { pulseWidth = middle - 200; }
     
     // send pulse width
     digitalWrite(port,HIGH);
