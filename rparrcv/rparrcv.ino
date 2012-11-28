@@ -80,10 +80,10 @@ void loop() {
 			wheelStep('l',-1);
 			wheelStep('r',1);
 		}
-		else if ( input == 'a' ) {
+		else if ( input == 'd' ) {
 			wheelStep('r',1);
 		}
-		else if ( input == 'd' ) {
+		else if ( input == 'a' ) {
 			wheelStep('l',-1);
 		}
 		else if ( input == 'c' ) {
