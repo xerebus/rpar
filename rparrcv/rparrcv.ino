@@ -2,6 +2,12 @@
  * and coordinates movement accordingly.
  */
 
+// wheel settings
+int lw = 5;
+int rw = 6;
+long unsigned lw_middle = 1320;
+long unsigned rw_middle = 1380;
+
 void wheelStep(char wheel, int dir) {
     
     long unsigned middle;
@@ -10,12 +16,12 @@ void wheelStep(char wheel, int dir) {
     /** EDIT THESE **/
     // wheel settings
     if ( wheel == 'l' ) {
-		middle = 1320;
-		port = 5;
+		middle = lw_middle;
+		port = lw;
 	}
 	else if ( wheel == 'r' ) {
-		middle = 1340;
-		port = 6;
+		middle = rw_middle;
+		port = rw;
 	}
 	else {
 		Serial.println("Bad wheel input");
@@ -66,23 +72,23 @@ void loop() {
 		
 		// what to do based on input
 		
-		if ( input == 'f' ) {
-			wheelStep(l,1);
-			wheelStep(r,-1);
+		if ( input == 'w' ) {
+			wheelStep('l',1);
+			wheelStep('r',-1);
 		}
-		else if ( input == 'b' ) {
-			wheelStep(l,-1);
-			wheelStep(r,1);
+		else if ( input == 's' ) {
+			wheelStep('l',-1);
+			wheelStep('r',1);
 		}
-		else if ( input == 'l' ) {
-			wheelStep(r,-1);
+		else if ( input == 'a' ) {
+			wheelStep('r',1);
 		}
-		else if ( input == 'r' ) {
-			wheelStep(l,-1);
+		else if ( input == 'd' ) {
+			wheelStep('l',-1);
 		}
 		else if ( input == 'c' ) {
-			wheelStep(l,0);
-			wheelStep(r,0);
+			wheelStep('l',0);
+			wheelStep('r',0);
 		}
 		else {
 			Serial.println("Bad input");
