@@ -32,15 +32,12 @@ void wheelStep(char wheel, int dir) {
 		else if ( dir == 0 ) { pulseWidth = middle; }
 		else if ( dir == -1 ) { pulseWidth = middle - rw_pw_delta; }
 	}
-	else {
-		Serial.println("Bad wheel input");
-	}
     
     // send pulse width
     digitalWrite(port,HIGH);
     delayMicroseconds(pulseWidth);
     digitalWrite(port,LOW);
-    delayMicroseconds(pulseWidth);
+    delay(20);
     
 }
 
@@ -52,17 +49,16 @@ void setup() {
         pinMode(rw,OUTPUT);
         digitalWrite(rw,LOW);
 	
-	// brind up serial port
+	// bring up serial port
 	Serial.begin(9600);
 
 }
 
 void loop() {
 
-	Serial.println("Ready for input");
 	
-	// while there is no input
-	while ( Serial.available() <= 0 ) {
+    // while there is no input
+    while ( Serial.available() <= 0 ) {
 		// do nothing
     }
     
