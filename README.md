@@ -29,4 +29,4 @@ Setup and Movement
 WASD Control
 -----------
 
-The `rpar-ctrl` script binds movement to the WASD keys. Pressing two keys at once is not supported, and `rpar-ctrl` will only take the first pressed key. It is a known issue that holding down a key will send one keypress, do nothing for a second or two, and then repeat the key - this is due to keyboard settings.
+Use `screen $PORT 9600` where `$PORT` is the serial port of the Arduino to access the serial monitor. W, A, S, and D can be used from here to send the respective serial outputs. It is a known issue that holding down a key will send one keypress, do nothing for a second or two, and then repeat the key - this is due to keyboard settings.
