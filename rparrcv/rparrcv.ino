@@ -5,10 +5,10 @@
 // wheel settings
 int lw = 5;
 int rw = 6;
-long unsigned lw_middle = 1320;
+long unsigned lw_middle = 1303;
 long unsigned rw_middle = 1380;
-long unsigned lw_pw_delta = 200;
-long unsigned rw_pw_delta = 180;
+long unsigned lw_pw_delta = 100;
+long unsigned rw_pw_delta = 100;
 
 void wheelStep(char wheel, int dir) {
     
