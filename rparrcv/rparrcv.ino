@@ -2,12 +2,13 @@
  * and coordinates movement accordingly.
  */
 
+/** EDIT THESE **/
 // wheel settings
-int lw = 5;
+int lw = 5;		// port for left wheel (lw)
 int rw = 6;
-long unsigned lw_middle = 1303;
+long unsigned lw_middle = 1303;	// pulse width that keeps lw stationary
 long unsigned rw_middle = 1355;
-long unsigned lw_pw_delta = 200;
+long unsigned lw_pw_delta = 200;	// difference between pulse width needed for lw to go forward and lw_middle
 long unsigned rw_pw_delta = 180;
 
 void wheelStep(char wheel, int dir) {
@@ -16,8 +17,6 @@ void wheelStep(char wheel, int dir) {
     int port;
     long unsigned pulseWidth;
     
-    /** EDIT THESE **/
-    // wheel settings
     if ( wheel == 'l' ) {
 		middle = lw_middle;
 		port = lw;
